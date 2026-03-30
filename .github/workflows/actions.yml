@@ -1,2 +1,22 @@
 # Workflow for building and testing the application
-test 
+name: ci
+
+on:
+  push:
+    branches: [ develop ]
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: Checkout 
+     - uses: actions/checkout@v6
+
+     - name: Set up  node.js
+     - uses: actions/setup-node@v6
+       with:
+          node-version: 24
+          cache: 'npm'
+       
+
